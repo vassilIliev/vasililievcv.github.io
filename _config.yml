@@ -1,0 +1,43 @@
+# GitHub Pages Configuration
+title: Vasil Iliev - Software Engineer
+description: Professional CV and Portfolio Website
+url: "https://vasililievcv.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO settings
+author: Vasil Iliev
+twitter:
+  username: yourusername
+  card: summary
+
+# Social links
+social:
+  name: Vasil Iliev
+  links:
+    - https://github.com/yourusername
+    - https://linkedin.com/in/yourprofile
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - package.json
+  - node_modules/
+  - vendor/
+
+# Include files in processing
+include:
+  - _pages

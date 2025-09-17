@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vasil Iliev - Software Engineer CV">
+    <title>Vasil Iliev - Software Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-name" id="heroName">Vasil Iliev</h1>
+                    <h2 class="hero-title" id="heroTitle">Software Engineer</h2>
+                    <p class="hero-description" id="heroDescription">
+                        Passionate software engineer with expertise in modern web technologies and a commitment to creating exceptional digital experiences.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="#" class="btn btn-secondary" id="downloadCV">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Projects & Experience</h2>
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Projects will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="skills-grid" id="skillsGrid">
+                    <!-- Skills will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-grid" id="educationGrid">
+                    <!-- Education will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section id="languages" class="languages">
+            <div class="container">
+                <h2 class="section-title">Languages</h2>
+                <div class="languages-grid" id="languagesGrid">
+                    <!-- Languages will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certifications-grid" id="certificationsGrid">
+                    <!-- Certifications will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p id="contactEmail">email@example.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <p id="contactPhone">+1234567890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p id="contactLocation">City, Country</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links" id="socialLinks">
+                        <!-- Social links will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Vasil Iliev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

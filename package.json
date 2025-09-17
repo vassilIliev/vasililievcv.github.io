@@ -1,0 +1,40 @@
+{
+  "name": "vasil-iliev-cv",
+  "version": "1.0.0",
+  "description": "Modern CV website for Vasil Iliev - Software Engineer",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js 3000",
+    "serve": "node server.js",
+    "build": "echo 'Static site - no build step required'",
+    "deploy": "echo 'Deploy to GitHub Pages by pushing to main branch'"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "portfolio",
+    "javascript",
+    "html",
+    "css",
+    "github-pages"
+  ],
+  "author": {
+    "name": "Vasil Iliev",
+    "email": "vasil.iliev@example.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasililievcv/vasililievcv.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vasililievcv/vasililievcv.github.io/issues"
+  },
+  "homepage": "https://vasililievcv.github.io",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
