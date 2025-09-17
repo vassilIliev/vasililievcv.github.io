@@ -281,39 +281,75 @@ section {
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1000px;
+    columns: 3;
+    column-gap: 1.5rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .skill-category {
     background: var(--background-color);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    height: fit-content;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.skill-category:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
 }
 
 .skill-category h3 {
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.skill-category h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
 }
 
 .skill-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .skill-tag {
     background: rgba(59, 130, 246, 0.1);
     color: var(--primary-color);
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    transition: var(--transition);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.skill-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-light);
 }
 
 /* Projects Section */
@@ -613,8 +649,6 @@ section {
         gap: 1rem;
     }
     
-    
-    
     .theme-toggle {
         top: 1rem;
         right: 1rem;
@@ -632,6 +666,34 @@ section {
         width: 280px;
         height: 280px;
         margin: 0 auto;
+    }
+    
+    .skills-grid {
+        columns: 3;
+        column-gap: 1rem;
+    }
+    
+    .skill-category {
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .skill-category h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .skill-category h3::after {
+        width: 30px;
+    }
+    
+    .skill-list {
+        gap: 0.4rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
     }
 }
 
@@ -656,12 +718,36 @@ section {
         margin: 0 auto;
     }
     
+    .skills-grid {
+        columns: 2;
+        column-gap: 1rem;
+    }
+    
+    .skill-category {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .skill-category h3 {
+        font-size: 1rem;
+    }
+    
     .projects-grid,
-    .skills-grid,
     .education-grid,
     .languages-grid,
     .certifications-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 360px) {
+    .skills-grid {
+        columns: 1;
+        column-gap: 0;
+    }
+    
+    .skill-category {
+        margin-bottom: 1.5rem;
     }
     
     .contact-item {
@@ -676,35 +762,272 @@ section {
 
 /* Print Styles */
 @media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
     .theme-toggle,
     .navbar,
     .hero-actions,
     .social-links {
-        display: none;
+        display: none !important;
     }
     
     body {
-        background: white;
-        color: black;
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
     }
     
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Hero Section - Print */
     .hero {
-        min-height: auto;
-        padding: 2rem 0;
-    }
-    
-    section {
-        padding: 2rem 0;
+        min-height: auto !important;
+        padding: 1rem 0 !important;
+        page-break-inside: avoid;
+        background: white !important;
     }
     
     .hero-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 300px 1fr !important;
+        gap: 2rem !important;
+        align-items: start !important;
     }
     
+    .profile-image {
+        width: 200px !important;
+        height: 200px !important;
+        margin: 0 !important;
+    }
+    
+    .hero-name {
+        font-size: 24pt !important;
+        color: black !important;
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: initial !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .hero-title {
+        font-size: 16pt !important;
+        color: #333 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .hero-description {
+        font-size: 11pt !important;
+        color: black !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Sections - Print */
+    section {
+        padding: 1.5rem 0 !important;
+        background: white !important;
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        font-size: 16pt !important;
+        color: black !important;
+        border-bottom: 1pt solid #333 !important;
+        padding-bottom: 0.5rem !important;
+        margin-bottom: 1rem !important;
+        page-break-after: avoid;
+    }
+    
+    /* Skills - Print */
+    .skills-grid {
+        columns: 2 !important;
+        column-gap: 1rem !important;
+    }
+    
+    .skill-category {
+        background: white !important;
+        border: 1pt solid #ddd !important;
+        padding: 0.8rem !important;
+        margin-bottom: 0.8rem !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid;
+    }
+    
+    .skill-category h3 {
+        font-size: 12pt !important;
+        color: black !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .skill-category h3::after {
+        display: none !important;
+    }
+    
+    .skill-tag {
+        background: #f0f0f0 !important;
+        color: black !important;
+        border: 1pt solid #ccc !important;
+        font-size: 9pt !important;
+        padding: 0.2rem 0.4rem !important;
+    }
+    
+    /* Projects - Print */
+    .projects-grid {
+        display: block !important;
+    }
+    
+    .project-card {
+        background: white !important;
+        border: 1pt solid #ddd !important;
+        margin-bottom: 1rem !important;
+        page-break-inside: avoid;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .project-image {
+        height: 60px !important;
+        background: #f5f5f5 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .project-image img {
+        max-height: 40px !important;
+        max-width: 120px !important;
+        object-fit: contain !important;
+    }
+    
+    .project-content h3 {
+        font-size: 12pt !important;
+        color: black !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .project-content p {
+        font-size: 10pt !important;
+        color: black !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .tech-tag {
+        background: #f0f0f0 !important;
+        color: black !important;
+        border: 1pt solid #ccc !important;
+        font-size: 8pt !important;
+        padding: 0.1rem 0.3rem !important;
+    }
+    
+    .project-links {
+        display: none !important;
+    }
+    
+    /* Education - Print */
+    .education-grid,
+    .languages-grid,
+    .certifications-grid {
+        display: block !important;
+    }
+    
+    .education-card,
+    .language-card,
+    .certification-card {
+        background: white !important;
+        border: 1pt solid #ddd !important;
+        margin-bottom: 0.8rem !important;
+        padding: 0.8rem !important;
+        page-break-inside: avoid;
+    }
+    
+    .education-card h3,
+    .education-card h4,
+    .language-card h3,
+    .certification-card h3,
+    .certification-card h4 {
+        color: black !important;
+        font-size: 11pt !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .education-date,
+    .certification-date,
+    .language-level {
+        color: #333 !important;
+        font-size: 9pt !important;
+    }
+    
+    /* Contact - Print */
+    .contact-content {
+        max-width: 100% !important;
+    }
+    
+    .contact-item {
+        background: white !important;
+        border: 1pt solid #ddd !important;
+        margin-bottom: 0.5rem !important;
+        padding: 0.5rem !important;
+        flex-direction: row !important;
+        text-align: left !important;
+    }
+    
+    .contact-item i {
+        color: black !important;
+    }
+    
+    .contact-item h3 {
+        color: black !important;
+        font-size: 10pt !important;
+    }
+    
+    .contact-item p {
+        color: black !important;
+        font-size: 10pt !important;
+    }
+    
+    /* Remove hover effects */
     .project-card:hover,
     .language-card:hover,
-    .certification-card:hover {
-        transform: none;
+    .certification-card:hover,
+    .skill-category:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    
+    /* Footer - Print */
+    .footer {
+        background: white !important;
+        border-top: 1pt solid #333 !important;
+        padding: 0.5rem 0 !important;
+        margin-top: 1rem !important;
+    }
+    
+    .footer p {
+        color: black !important;
+        font-size: 9pt !important;
+        text-align: center !important;
+    }
+    
+    /* Page breaks */
+    .skills,
+    .projects,
+    .education,
+    .contact {
+        page-break-before: auto;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
     }
 }
 

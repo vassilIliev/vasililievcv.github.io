@@ -6,7 +6,7 @@ const cvData = {
         email: "vasil.iliev.97@gmail.com",
         phone: "+359894380148",
         location: "Bulgaria",
-        summary: "Full Stack Software Engineer specializing in AI-powered applications and investment intelligence platforms. Currently developing MAIA, Mubadala's proprietary AI-enabled platform that transforms investment workflows and strategic decision-making processes. My expertise spans front-end and back-end web development, with a growing focus on AI/ML integration and data analytics. I excel at building scalable, high-quality applications that provide exceptional user experiences while incorporating cutting-edge AI technologies. Passionate about designing robust databases and implementing efficient programming patterns, I continually develop my skills in both traditional software engineering and emerging AI technologies. Over the past four years, I have successfully contributed to numerous high-impact projects, adapting quickly to new environments and demonstrating efficiency from the start. My strong interpersonal skills and collaborative mindset consistently enable me to integrate smoothly into teams, ensuring projects are delivered on time and to the highest standards.",
+        summary: "Full Stack Web Developer with expertise in both front-end and back-end development, delivering scalable, high-quality web applications with exceptional user experiences. Skilled in combining creative UI design with precise backend logic to build seamless, maintainable solutions. Passionate about clean architectures and robust design patterns, ensuring performance, scalability, and long-term reliability. Over four years of experience contributing to diverse projects, quickly adapting to new environments, and integrating effectively into teams to deliver results on time and to the highest standards. Committed to continuous growth, collaboration, and technical excellence.",
         profileImage: "1.jpg" // Your professional profile image
     },
     
@@ -117,26 +117,27 @@ const cvData = {
             "Java", "Python"
         ],
         "Frontend Technologies": [
-            "React", "Redux", "Redux Saga", "Angular", "RxJS", "NgRx", "HTML5", "CSS3", "SCSS", "Tailwind", "MUI", "Bootstrap"
+            "React", "Redux", "Redux Saga", "Angular", "RxJS", "NgRx", 
+            "HTML5", "CSS3", "SCSS", "Tailwind", "MUI", "Bootstrap", "Fluent UI"
         ],
-        "Backend Technologies": [
-            "Node.js", "Express.js"
+        "Backend & APIs": [
+            "Node.js", "Express.js", "RESTful API", "gRPC"
         ],
         "Databases": [
-            "MongoDB", "SQL", "MySQL", "Firebase"
+            "MongoDB", "MySQL", "SQL", "Firebase", "Snowflake"
         ],
-        "Development Tools": [
-            "Git", "GitLab", "GitHub", "Bitbucket", "Docker"
+        "ORM/ODM": [
+            "Mongoose"
         ],
-        "Project Management": [
-            "Jira", "Azure", "Agile", "Scrum", "Kanban", "Waterfall"
+        "Development & DevOps Tools": [
+            "Git", "GitLab", "GitHub", "Bitbucket", "Docker", "Azure DevOps"
         ],
-        "AI & Machine Learning": [
-            "AI/ML Platforms", "Data Analytics", "Investment Intelligence", "Python ML Libraries"
+        "Project Management & Methodologies": [
+            "Jira", "Agile", "Scrum", "Kanban", "Waterfall"
         ],
-        "Other Technologies": [
-            "JSON", "XML", "Design Patterns", "Clean Architecture", "Clean Code", "OOP", "Functional Programming"
-        ]
+        "Software Principles & Practices": [
+            "Design Patterns","Data structures & algorithms", "Clean Architecture", "Clean Code", "OOP", "Functional Programming"
+        ],
     },
     
     projects: [
@@ -144,7 +145,7 @@ const cvData = {
             id: 1,
             name: "MAIA (Mubadala AI & Analytics)",
             description: "Proprietary AI-enabled platform designed to transform investment intelligence and corporate workflows. Seamlessly integrating AI into strategic investment processes and everyday operations to accelerate decision-making, enhance precision, and boost operational efficiency. Long-term vision of becoming a voting member on the Investment Committee.",
-            technologies: ["AI/ML", "Python", "TypeScript", "React", "Node.js", "Data Analytics", "Investment Intelligence", "Cloud Computing"],
+            technologies: ["TypeScript", "React", "Jotai", ".NET", "Tailwind","Fluent UI", "Azure DevOps"],
             githubUrl: null,
             liveUrl: null,
             image: "mubadala.png"
@@ -153,7 +154,7 @@ const cvData = {
             id: 2,
             name: "Wellness Infotainment System",
             description: "In-car infotainment web application for VW ID cars integrating advanced vehicle features including climate control, panoramic roof, ambient lighting, seat massage, and smart lights. Created customized programs for immersive driving experiences.",
-            technologies: ["JavaScript", "TypeScript", "React", "Redux", "Node.js", "VW Libraries", "Git", "GitLab"],
+            technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "VW Internal Libraries", "Git", "Bitbucket"],
             githubUrl: null,
             liveUrl: null,
             image: "volkswagen.jpg"
@@ -162,7 +163,7 @@ const cvData = {
             id: 3,
             name: "Saint Sofia School Management System",
             description: "Full-stack school management application for creating and managing exams, tests, and assignments. Implemented complex data relationships and AI functionality integration for enhanced educational tools.",
-            technologies: ["JavaScript", "TypeScript", "React", "Node.js", "Express", "MongoDB", "Mongoose", "MUI", "Docker"],
+            technologies: ["JavaScript", "TypeScript", "React", "Redux", "Redux Saga", "Node.js", "Express", "MongoDB", "Mongoose", "MUI", "Docker"],
             githubUrl: null,
             liveUrl: null,
             image: "saintSofia.png"
@@ -171,7 +172,7 @@ const cvData = {
             id: 4,
             name: "WeCharge Electric Vehicle System",
             description: "Infotainment system for Volkswagen Group electric vehicles providing real-time charging station information, availability status, and pricing. Built-in navigation for efficient journey planning.",
-            technologies: ["React", "Node.js", "Redux", "Leaflet", "VW Libraries", "Git", "Bitbucket"],
+            technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "Leaflet", "VW Internal Libraries", "Git", "Bitbucket"],
             githubUrl: null,
             liveUrl: null,
             image: "volkswagen.jpg"
@@ -197,10 +198,10 @@ const cvData = {
     ],
     
     social: {
-        linkedin: "https://linkedin.com/in/vasil-iliev",
-        github: "https://github.com/vasil-iliev",
+        linkedin: "https://www.linkedin.com/in/vassil-iliev-41935b239/",
+        github: null,
         twitter: null,
-        email: "vasil.iliev.97@gmail.com"
+        email: "vassil.iliev.97@gmail.com"
     },
     
     // Additional sections
