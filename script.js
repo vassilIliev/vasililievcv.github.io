@@ -153,6 +153,10 @@ class CVWebsite {
                 </div>
                 <div class="project-content">
                     <h3>${project.name}</h3>
+                    <div class="project-meta">
+                        <div class="project-role">${project.role}</div>
+                        <div class="project-dates">${project.startDate} - ${project.endDate}</div>
+                    </div>
                     <p>${project.description}</p>
                     <div class="project-tech">
                         ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}

@@ -388,8 +388,25 @@ section {
 
 .project-content h3 {
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 1.3rem;
+}
+
+.project-meta {
+    margin-bottom: 1rem;
+}
+
+.project-role {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-dates {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .project-content p {
@@ -911,7 +928,24 @@ section {
     .project-content h3 {
         font-size: 12pt !important;
         color: black !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .project-meta {
         margin-bottom: 0.5rem !important;
+    }
+    
+    .project-role {
+        font-size: 10pt !important;
+        color: black !important;
+        font-weight: 600 !important;
+        margin-bottom: 0.2rem !important;
+    }
+    
+    .project-dates {
+        font-size: 9pt !important;
+        color: #666 !important;
+        font-weight: 500 !important;
     }
     
     .project-content p {

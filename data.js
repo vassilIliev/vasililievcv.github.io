@@ -144,6 +144,10 @@ const cvData = {
         {
             id: 1,
             name: "MAIA (Mubadala AI & Analytics)",
+            role: "Software Engineer",
+            company: "Mubadala",
+            startDate: "2024",
+            endDate: "Present",
             description: "Proprietary AI-enabled platform designed to transform investment intelligence and corporate workflows. Seamlessly integrating AI into strategic investment processes and everyday operations to accelerate decision-making, enhance precision, and boost operational efficiency. Long-term vision of becoming a voting member on the Investment Committee.",
             technologies: ["TypeScript", "React", "Jotai", ".NET", "Tailwind","Fluent UI", "Azure DevOps"],
             githubUrl: null,
@@ -153,6 +157,10 @@ const cvData = {
         {
             id: 2,
             name: "Wellness Infotainment System",
+            role: "Software Engineer",
+            company: "IAV GmbH",
+            startDate: "2023",
+            endDate: "2024",
             description: "In-car infotainment web application for VW ID cars integrating advanced vehicle features including climate control, panoramic roof, ambient lighting, seat massage, and smart lights. Created customized programs for immersive driving experiences.",
             technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "VW Internal Libraries", "Git", "Bitbucket"],
             githubUrl: null,
@@ -162,6 +170,10 @@ const cvData = {
         {
             id: 3,
             name: "Saint Sofia School Management System",
+            role: "Software Engineer & Project Lead",
+            company: "Saint Sofia Private School",
+            startDate: "2023",
+            endDate: "2023",
             description: "Full-stack school management application for creating and managing exams, tests, and assignments. Implemented complex data relationships and AI functionality integration for enhanced educational tools.",
             technologies: ["JavaScript", "TypeScript", "React", "Redux", "Redux Saga", "Node.js", "Express", "MongoDB", "Mongoose", "MUI", "Docker"],
             githubUrl: null,
@@ -170,7 +182,24 @@ const cvData = {
         },
         {
             id: 4,
+            name: "Celonis Bank Application",
+            role: "Software Engineer Consultant",
+            company: "Celonis",
+            startDate: "2023",
+            endDate: "2023",
+            description: "Fintech application refactoring project. Modernized legacy codebase from imperative style to ES6 standards, implementing clean architecture and modern programming practices.",
+            technologies: ["JavaScript", "TypeScript", "React", "Redux", "Redux Saga", "MySQL", "Git", "Bitbucket"],
+            githubUrl: null,
+            liveUrl: null,
+            image: "celonis.png"
+        },
+        {
+            id: 5,
             name: "WeCharge Electric Vehicle System",
+            role: "Software Engineer",
+            company: "IAV GmbH",
+            startDate: "2022",
+            endDate: "2023",
             description: "Infotainment system for Volkswagen Group electric vehicles providing real-time charging station information, availability status, and pricing. Built-in navigation for efficient journey planning.",
             technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "Leaflet", "VW Internal Libraries", "Git", "Bitbucket"],
             githubUrl: null,
@@ -178,22 +207,17 @@ const cvData = {
             image: "volkswagen.jpg"
         },
         {
-            id: 5,
+            id: 6,
             name: "Impulse Communication Platform",
+            role: "Software Engineer",
+            company: "Telerik",
+            startDate: "2022",
+            endDate: "2022",
             description: "Multi-team collaboration platform with centralized messaging, task organization, and project management. Features include group chats, file sharing, real-time notifications, and authentication protocols.",
             technologies: ["React", "TypeScript", "Firebase", "MUI", "Git", "GitHub"],
             githubUrl: null,
             liveUrl: null,
             image: "telerik.png"
-        },
-        {
-            id: 6,
-            name: "Celonis Bank Application",
-            description: "Fintech application refactoring project. Modernized legacy codebase from imperative style to ES6 standards, implementing clean architecture and modern programming practices.",
-            technologies: ["JavaScript", "TypeScript", "React", "Redux", "Redux Saga", "MySQL", "Git", "Bitbucket"],
-            githubUrl: null,
-            liveUrl: null,
-            image: "celonis.png"
         }
     ],
     
