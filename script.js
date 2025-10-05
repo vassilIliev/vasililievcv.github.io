@@ -157,7 +157,10 @@ class CVWebsite {
                         <div class="project-role">${project.role}</div>
                         <div class="project-dates">${project.startDate} - ${project.endDate}</div>
                     </div>
-                    <p>${project.description}</p>
+                    <div class="project-description">
+                        <p><strong>Project Overview:</strong> ${project.description}</p>
+                        ${project.personalExperience ? `<p><strong>Personal Experience:</strong> ${project.personalExperience}</p>` : ''}
+                    </div>
                     <div class="project-tech">
                         ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                     </div>
