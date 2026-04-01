@@ -43,18 +43,6 @@ class CVWebsite {
             themeToggle.addEventListener('click', () => this.toggleTheme());
         }
 
-        const downloadToggle = document.getElementById('downloadToggle');
-        const downloadDropdown = document.getElementById('downloadDropdown');
-        if (downloadToggle && downloadDropdown) {
-            downloadToggle.addEventListener('click', () => {
-                downloadDropdown.classList.toggle('open');
-            });
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.download-wrapper')) {
-                    downloadDropdown.classList.remove('open');
-                }
-            });
-        }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {

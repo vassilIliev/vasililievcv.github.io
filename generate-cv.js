@@ -358,9 +358,9 @@ async function generateWord() {
                 ...buildHeader(),
                 ...buildSummary(),
                 ...buildExperience(),
+                ...buildSideProjects(),
                 ...buildStrengths(),
                 ...buildSkills(),
-                ...buildSideProjects(),
                 ...buildEducation(),
                 ...buildLanguagesLine(),
             ],
@@ -391,15 +391,12 @@ function generatePDF() {
             margins: { top: 40, bottom: 36, left: 50, right: 50 },
         });
 
-        const stream = fs.createWriteStream('Vasil_Iliev_CV.pdf');
+        const stream = fs.createWriteStream('Vassil_Iliev_CV.pdf');
         doc.pipe(stream);
 
         const pageWidth = doc.page.width - doc.page.margins.left - doc.page.margins.right;
+        const indent = 14;
         const col = (hex) => hexToRGB(hex);
-
-        // Register fonts
-        doc.registerFont('Calibri', 'Calibri');
-        doc.registerFont('Calibri-Bold', 'Calibri');
 
         const font = 'Helvetica';
         const fontBold = 'Helvetica-Bold';
@@ -411,7 +408,19 @@ function generatePDF() {
             }
         }
 
-        // --- HEADER with photo ---
+        function pdfSectionTitle(title) {
+            checkPage(30);
+            doc.moveDown(0.4);
+            doc.font(fontBold).fontSize(11).fillColor(col(COLORS.primary));
+            doc.text(title.toUpperCase());
+            const y = doc.y + 2;
+            doc.moveTo(doc.page.margins.left, y)
+                .lineTo(doc.page.margins.left + pageWidth, y)
+                .strokeColor(col(COLORS.primary)).lineWidth(0.5).stroke();
+            doc.y = y + 6;
+        }
+
+        // --- HEADER ---
         const imagePath = path.resolve(__dirname, cvData.personal.profileImage);
         const imgSize = 80;
         const imgX = (pageWidth - imgSize) / 2 + doc.page.margins.left;
@@ -434,24 +443,10 @@ function generatePDF() {
         }
         doc.moveDown(0.4);
 
-        // Divider
         doc.moveTo(doc.page.margins.left, doc.y)
             .lineTo(doc.page.margins.left + pageWidth, doc.y)
             .strokeColor(col(COLORS.line)).lineWidth(0.5).stroke();
         doc.moveDown(0.5);
-
-        // --- Section helper ---
-        function pdfSectionTitle(title) {
-            checkPage(30);
-            doc.moveDown(0.4);
-            doc.font(fontBold).fontSize(11).fillColor(col(COLORS.primary));
-            doc.text(title.toUpperCase());
-            const y = doc.y + 2;
-            doc.moveTo(doc.page.margins.left, y)
-                .lineTo(doc.page.margins.left + pageWidth, y)
-                .strokeColor(col(COLORS.primary)).lineWidth(0.5).stroke();
-            doc.y = y + 6;
-        }
 
         // --- SUMMARY ---
         pdfSectionTitle('Summary');
@@ -467,15 +462,16 @@ function generatePDF() {
 
             const contractLabel = exp.type === 'contract' ? ' (Contract)' : '';
             const dates = `${exp.startDate} – ${exp.endDate}`;
-
-            // Role line
             const roleText = `${exp.position}  —  ${exp.company}${contractLabel}`;
+
+            // Role + dates on one line
+            const savedY = doc.y;
             doc.font(fontBold).fontSize(10).fillColor(col(COLORS.dark));
-            const dateWidth = doc.widthOfString(dates, { font: font, size: 9 });
-            doc.text(roleText, doc.page.margins.left, doc.y, { width: pageWidth - dateWidth - 10, continued: false });
-            // Dates right-aligned on the same line
+            doc.text(roleText, { width: pageWidth * 0.75 });
+            const afterRoleY = doc.y;
             doc.font(font).fontSize(9).fillColor(col(COLORS.muted));
-            doc.text(dates, doc.page.margins.left, doc.y - doc.currentLineHeight() - 2, { width: pageWidth, align: 'right' });
+            doc.text(dates, doc.page.margins.left, savedY, { width: pageWidth, align: 'right' });
+            doc.y = afterRoleY;
 
             if (exp.projectName) {
                 doc.font(fontItalic).fontSize(8.5).fillColor(col(COLORS.muted));
@@ -484,58 +480,23 @@ function generatePDF() {
 
             doc.moveDown(0.15);
 
-            // Highlights
             if (exp.highlights) {
                 exp.highlights.forEach(h => {
                     checkPage(20);
                     doc.font(font).fontSize(9).fillColor(col(COLORS.dark));
-                    doc.text(`•  ${h}`, doc.page.margins.left + 14, doc.y, {
-                        width: pageWidth - 14,
-                        lineGap: 1,
-                    });
+                    doc.text(`•  ${h}`, { indent, width: pageWidth - indent, lineGap: 1 });
                     doc.moveDown(0.1);
                 });
             }
 
-            // Tech
             if (exp.technologies && exp.technologies.length) {
                 doc.moveDown(0.1);
                 doc.font(fontBold).fontSize(8).fillColor(col(COLORS.muted));
-                doc.text('Tech: ', doc.page.margins.left + 14, doc.y, { continued: true, width: pageWidth - 14 });
+                doc.text('Tech: ', { indent, continued: true, width: pageWidth - indent });
                 doc.font(font).fillColor(col(COLORS.secondary));
                 doc.text(exp.technologies.join('  ·  '));
             }
         });
-
-        // --- SKILLS ---
-        pdfSectionTitle('Skills');
-
-        const technicalSkills = Object.entries(cvData.skills).filter(
-            ([cat]) => cat !== 'Product & Marketing'
-        );
-
-        technicalSkills.forEach(([category, skills]) => {
-            checkPage(18);
-            doc.font(fontBold).fontSize(9).fillColor(col(COLORS.dark));
-            doc.text(`${category}: `, { continued: true });
-            doc.font(font).fillColor(col(COLORS.secondary));
-            doc.text(skills.join(',  '));
-            doc.moveDown(0.1);
-        });
-
-        // --- STRENGTHS ---
-        pdfSectionTitle('What I Bring');
-
-        if (cvData.strengths) {
-            cvData.strengths.forEach(s => {
-                checkPage(18);
-                doc.font(fontBold).fontSize(9).fillColor(col(COLORS.dark));
-                doc.text(`${s.title}: `, { continued: true });
-                doc.font(font).fillColor(col(COLORS.secondary));
-                doc.text(s.description);
-                doc.moveDown(0.1);
-            });
-        }
 
         // --- SIDE PROJECTS ---
         pdfSectionTitle('Side Projects');
@@ -554,21 +515,48 @@ function generatePDF() {
 
             const shortDesc = project.description.split('. ').slice(0, 2).join('. ') + '.';
             doc.font(font).fontSize(9).fillColor(col(COLORS.dark));
-            doc.text(shortDesc, doc.page.margins.left + 14, doc.y, { width: pageWidth - 14, lineGap: 1 });
+            doc.text(shortDesc, { indent, width: pageWidth - indent, lineGap: 1 });
 
             doc.moveDown(0.1);
             doc.font(fontBold).fontSize(8).fillColor(col(COLORS.muted));
-            doc.text('Tech: ', doc.page.margins.left + 14, doc.y, { continued: true, width: pageWidth - 14 });
+            doc.text('Tech: ', { indent, continued: true, width: pageWidth - indent });
             doc.font(font).fillColor(col(COLORS.secondary));
             doc.text(project.technologies.join('  ·  '));
 
             if (project.links && project.links.website) {
                 doc.font(font).fontSize(8).fillColor(col(COLORS.primary));
-                doc.text(project.links.website, doc.page.margins.left + 14, doc.y, {
-                    link: project.links.website,
-                    width: pageWidth - 14,
-                });
+                doc.text(project.links.website, { indent, link: project.links.website, width: pageWidth - indent });
             }
+        });
+
+        // --- STRENGTHS ---
+        pdfSectionTitle('What I Bring');
+
+        if (cvData.strengths) {
+            cvData.strengths.forEach(s => {
+                checkPage(18);
+                doc.font(fontBold).fontSize(9).fillColor(col(COLORS.dark));
+                doc.text(`${s.title}: `, { continued: true });
+                doc.font(font).fillColor(col(COLORS.secondary));
+                doc.text(s.description);
+                doc.moveDown(0.1);
+            });
+        }
+
+        // --- SKILLS ---
+        pdfSectionTitle('Skills');
+
+        const technicalSkills = Object.entries(cvData.skills).filter(
+            ([cat]) => cat !== 'Product & Marketing'
+        );
+
+        technicalSkills.forEach(([category, skills]) => {
+            checkPage(18);
+            doc.font(fontBold).fontSize(9).fillColor(col(COLORS.dark));
+            doc.text(`${category}: `, { continued: true });
+            doc.font(font).fillColor(col(COLORS.secondary));
+            doc.text(skills.join(',  '));
+            doc.moveDown(0.1);
         });
 
         // --- EDUCATION ---
@@ -583,7 +571,7 @@ function generatePDF() {
             doc.text(`  —  ${edu.institution}`);
             if (edu.description) {
                 doc.font(fontItalic).fontSize(8).fillColor(col(COLORS.muted));
-                doc.text(edu.description, doc.page.margins.left + 14, doc.y, { width: pageWidth - 14 });
+                doc.text(edu.description, { indent, width: pageWidth - indent });
             }
         });
 
@@ -596,7 +584,7 @@ function generatePDF() {
 
         doc.end();
         stream.on('finish', () => {
-            console.log('Generated: Vasil_Iliev_CV.pdf');
+            console.log('Generated: Vassil_Iliev_CV.pdf');
             resolve();
         });
     });
@@ -607,7 +595,6 @@ function generatePDF() {
 // ============================================
 
 async function main() {
-    await generateWord();
     await generatePDF();
 }
 

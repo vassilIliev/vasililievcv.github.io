@@ -1,12 +1,12 @@
-// CV Data Storage - Vasil Iliev's Professional Information
+// CV Data Storage - Vassil Iliev's Professional Information
 const cvData = {
     personal: {
-        name: "Vasil Iliev",
+        name: "Vassil Iliev",
         title: "Full Stack Software Engineer",
-        email: "vasil.iliev.97@gmail.com",
+        email: "vassil.iliev.97@gmail.com",
         phone: "+359894380148",
         location: "Bulgaria",
-        summary: "Full Stack Engineer with 4+ years of experience, mostly in enterprise — automotive infotainment for Volkswagen and an AI investment platform at Mubadala. I value clean architecture, solid design patterns, and working on products where quality and reliability are expected.",
+        summary: "Full Stack Engineer with 4+ years of experience, mostly in enterprise — currently building an AI investment platform at Mubadala, previously shipped in-car infotainment systems for Volkswagen. I take responsibility naturally, pick up new technologies quickly, and prefer being the person who talks to the client rather than avoiding it.",
         profileImage: "1.jpg"
     },
 
@@ -152,10 +152,10 @@ const cvData = {
 
     skills: {
         "Languages": [
-            "TypeScript", "JavaScript", "Python", "SQL"
+            "TypeScript", "JavaScript", "Python"
         ],
         "Frontend": [
-            "React", "React Native", "Expo", "Angular", "Redux", "Redux Saga", "RxJS", "NgRx",
+            "React", "Expo", "Angular", "Redux", "Redux Saga", "RxJS", "NgRx", "Jotai",
             "HTML5", "CSS3", "SCSS", "Tailwind", "MUI", "Fluent UI", "Bootstrap"
         ],
         "Backend & APIs": [
@@ -169,37 +169,34 @@ const cvData = {
         ],
         "Architecture & Patterns": [
             "Clean Architecture", "Design Patterns", "OOP", "Functional Programming",
-            "Data Structures & Algorithms", "Microservices"
+            "Data Structures & Algorithms"
         ],
         "Testing": [
-            "Jest", "Unit Testing", "Integration Testing", "E2E Testing"
+            "Jest", "Unit Testing", "Integration Testing"
         ],
         "AI-Assisted Development": [
             "ChatGPT", "Claude", "Claude Code", "Gemini", "Cursor", "GitHub Copilot",
-            "Prompt Engineering", "AI-Powered Code Review", "AI Pair Programming"
+            "Prompt Engineering"
         ],
         "Product & Marketing": [
             "Figma", "Stripe", "RevenueCat", "Outseta", "Prismic", "Mux"
-        ],
-        "Also Speak (no semicolons needed)": [
-            "Bulgarian \u{1F1E7}\u{1F1EC} Native", "English \u{1F1EC}\u{1F1E7} Fluent", "German \u{1F1E9}\u{1F1EA} Enough to order beer"
         ]
     },
 
     strengths: [
         {
-            title: "Full-Stack Ownership",
-            description: "Comfortable owning things end-to-end — frontend, backend, architecture, client communication, and delivery.",
-            icon: "fas fa-layer-group"
+            title: "Responsible & Proactive",
+            description: "I show up when something needs to be done, even if it's not my responsibility. Teams and managers have consistently trusted me for being proactive, helpful, and always answering the call to action.",
+            icon: "fas fa-shield-alt"
         },
         {
-            title: "Strong Communication",
-            description: "Experience representing projects directly to clients, managing expectations, and bridging business needs with technical work.",
+            title: "Client-Facing Confidence",
+            description: "I represent the team and the project directly to clients without hesitation. I handle expectations, gather feedback, and make sure the communication between business and engineering is clear.",
             icon: "fas fa-comments"
         },
         {
             title: "Quick to Adapt",
-            description: "I get productive quickly in new domains. Moved from automotive infotainment to AI investment tools with a smooth transition.",
+            description: "If a technology is not in my current stack, it doesn't slow me down. I have a strong foundation in programming concepts and abstractions, which lets me pick up new tools and frameworks fast.",
             icon: "fas fa-bolt"
         },
         {
@@ -231,7 +228,7 @@ const cvData = {
             technologies: ["Figma", "Outseta", "RevenueCat", "Stripe", "Prismic"],
             icon: "fas fa-road",
             links: {
-                website: "https://trolltracker.eu",
+                website: "https://tolltracker.eu",
                 appStore: null,
                 playStore: null
             }
