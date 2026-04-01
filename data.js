@@ -6,79 +6,138 @@ const cvData = {
         email: "vasil.iliev.97@gmail.com",
         phone: "+359894380148",
         location: "Bulgaria",
-        summary: "Full Stack Web Developer with expertise in both front-end and back-end development, delivering scalable, high-quality web applications with exceptional user experiences. Skilled in combining creative UI design with precise backend logic to build seamless, maintainable solutions. Passionate about clean architectures and robust design patterns, ensuring performance, scalability, and long-term reliability. Over four years of experience contributing to diverse projects, quickly adapting to new environments, and integrating effectively into teams to deliver results on time and to the highest standards. Committed to continuous growth, collaboration, and technical excellence.",
-        profileImage: "1.jpg" // Your professional profile image
+        summary: "Full Stack Engineer with 4+ years of experience, mostly in enterprise — automotive infotainment for Volkswagen and an AI investment platform at Mubadala. I value clean architecture, solid design patterns, and working on products where quality and reliability are expected.",
+        profileImage: "1.jpg"
     },
-    
+
     experience: [
         {
             id: 1,
             company: "Mubadala",
-            position: "Software Engineer",
+            position: "Senior Software Engineer",
+            type: "full-time",
             startDate: "2024",
             endDate: "Present",
-            description: "Working on MAIA (Mubadala AI & Analytics), Mubadala's proprietary AI-enabled platform designed to transform investment intelligence and corporate workflows. Seamlessly integrating AI into both strategic investment processes and everyday operations, MAIA aims to accelerate decision-making, enhance precision, and boost operational efficiency. Contributing to a long-term vision of becoming a voting member on the Investment Committee, representing a major leap toward data-driven, AI-powered investment strategies and organizational innovation."
+            image: "mubadala.png",
+            imageStyle: "contain-scaled",
+            highlights: [
+                "Building MAIA, Mubadala's internal AI platform for investment intelligence and corporate workflows",
+                "First role as a Senior Developer, in a large team with high standards for code quality and delivery",
+                "Supporting teammates with technical challenges, coordinating across teams, and working on-site with clients"
+            ],
+            technologies: ["TypeScript", "React", "Jotai", ".NET", "Tailwind", "Fluent UI", "Azure DevOps"],
+            details: "The most significant project of my career so far. We're building software for institutional investors in a large, skilled team — a product where there's no room for mistakes. I adapted quickly and started contributing both technically and organizationally. I also had the chance to work on-site with clients, which helped me better understand their actual needs."
         },
         {
             id: 2,
-            company: "IAV GmbH",
+            company: "IAV GmbH / Volkswagen",
             position: "Software Engineer",
+            type: "full-time",
             startDate: "2023",
             endDate: "2024",
-            description: "Developed Wellness Infotainment System for VW ID cars, integrating advanced vehicle features including climate system, electromagnetic panoramic roof, ambient lighting, seat massage, and smart lights. Created customized programs combining these features for immersive in-car experiences. Traveled frequently to factories for direct in-car development and testing."
+            image: "volkswagen.jpg",
+            imageStyle: "contain",
+            projectName: "Wellness Infotainment System",
+            highlights: [
+                "Built the Wellness Infotainment System for VW ID cars — integrating climate, panoramic roof, ambient lighting, seat massage, and smart lights into one application",
+                "Delivered the project on schedule with one colleague, including on-site development at VW factories, coding directly in the vehicles",
+                "Designed coordination patterns to manage multiple physical vehicle systems through a single web interface"
+            ],
+            technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "VW Internal Libraries", "Git", "Bitbucket"],
+            details: "My second VW project. The main challenge was making a web application control actual car hardware — climate, roof, lights, seats — and have them work together as combined programs. I worked on-site at VW factories, developing directly inside the vehicles. It was just me and one colleague, and we delivered on schedule. One of the most rewarding projects I've been part of."
         },
         {
             id: 3,
-            company: '"Saint Sofia" Private School',
+            company: "\"Saint Sofia\" Private School",
             position: "Software Engineer & Project Lead",
+            type: "contract",
             startDate: "2023",
             endDate: "2023",
-            description: "Led full-stack development of school management system for creating and managing exams, tests, and assignments. Took ownership as project representative, communicating directly with clients. Implemented innovative features including complex data relationships and AI functionality integration. Enhanced existing live application with new capabilities."
+            image: "saintSofia.png",
+            imageStyle: "contain",
+            projectName: "School Management System",
+            highlights: [
+                "Took over as both tech lead and client-facing representative after the original team had left",
+                "Led full-stack development of a school management system for exams, tests, and assignments",
+                "Managed client communication, distributed tasks across the team, and delivered a new version with improved design and AI features"
+            ],
+            technologies: ["TypeScript", "React", "Redux", "Redux Saga", "Node.js", "Express", "MongoDB", "Mongoose", "MUI", "Docker"],
+            details: "The client returned for new features, but the original developers had moved on. I took over the full scope — client communication, planning, task distribution, and development on both frontend and backend. We delivered an upgraded version with cleaner design and new functionality. It was my first real experience running a project end-to-end."
         },
         {
             id: 4,
             company: "Celonis",
             position: "Software Engineer Consultant",
+            type: "contract",
             startDate: "2023",
             endDate: "2023",
-            description: "Refactored legacy fintech application codebase from outdated imperative style to modern ES6 standards. Mentored fellow developers on best programming practices and modern technologies. Focused on creating clean, efficient, and scalable code for future development while maintaining existing functionality."
+            image: "celonis.png",
+            imageStyle: "contain",
+            projectName: "Bank Application Modernization",
+            highlights: [
+                "Brought in solo to refactor a critical part of a fintech application from legacy imperative code to modern ES6",
+                "After resolving the immediate issues, mentored the team on cleaner patterns and how to continue the refactoring themselves",
+                "All changes had to maintain full backward compatibility for existing users"
+            ],
+            technologies: ["TypeScript", "React", "Redux", "Redux Saga", "MySQL", "Git", "Bitbucket"],
+            details: "A fintech application had a critical section causing production issues. I joined as a solo consultant, rewrote that part, and then worked with the team to show them how to approach the rest of the codebase on their own."
         },
         {
             id: 5,
-            company: "IAV GmbH",
+            company: "IAV GmbH / Volkswagen",
             position: "Software Engineer",
+            type: "full-time",
             startDate: "2022",
             endDate: "2023",
-            description: "Developed WeCharge infotainment system for Volkswagen Group (VW, SEAT, Škoda). Built real-time navigation tool for electric vehicle charging stations with availability status and pricing information. Implemented features for efficient journey planning and enhanced electric vehicle experience."
+            image: "volkswagen.jpg",
+            imageStyle: "contain",
+            projectName: "WeCharge EV System",
+            highlights: [
+                "Built WeCharge — an infotainment system for VW, SEAT, and Skoda EVs showing nearby charging stations with real-time availability and pricing",
+                "Started as a junior and was working on tasks independently within the first week on a large team",
+                "Integrated Angular with VW's internal framework libraries and connected to backend services over gRPC"
+            ],
+            technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "Leaflet", "VW Internal Libraries", "Git", "Bitbucket"],
+            details: "My first professional role as a developer. Large team, large company, and a lot to learn quickly. Within the first week I was already handling tasks independently, and over time I became one of the most relied-on developers on the project. This is where I learned Angular and got comfortable working in enterprise-scale codebases."
         },
         {
             id: 6,
-            company: "Telerik",
-            position: "Software Engineer",
+            company: "Telerik Academy",
+            position: "Lead Developer (Graduate Project)",
+            type: "full-time",
             startDate: "2022",
             endDate: "2022",
-            description: "Designed and implemented Impulse communication platform for multi-team collaboration. Developed centralized messaging, task organization, and project management tools. Implemented authentication protocols, rich UI/UX design, and real-time features including group chats, file sharing, and notifications."
+            image: "telerik.png",
+            imageStyle: "contain",
+            projectName: "Impulse Communication Platform",
+            highlights: [
+                "Built Impulse — a real-time chat application with messaging, file sharing, and notifications, developed from scratch",
+                "Led a team of three, defined the application architecture and development plan",
+                "Won the award for best graduate project and graduated as a top performer, receiving multiple job offers"
+            ],
+            technologies: ["React", "TypeScript", "Firebase", "MUI", "Git", "GitHub"],
+            details: "My final project at Telerik Academy. A team of three, building a complete chat application with real-time messaging and notifications from the ground up. I led the architecture and planning. We won the award for best project, and I graduated as a top performer in my cohort, which led to several job opportunities."
         }
     ],
-    
+
     education: [
         {
             id: 1,
             institution: "Telerik Academy",
             degree: "Computer Software Engineering",
-            field: "Software Development",
+            field: "Full Stack Development",
             startDate: "",
             endDate: "",
-            description: "Intensive software development program focusing on modern web technologies and best practices"
+            description: "Intensive software development program. Graduated as top performer with best graduate project award."
         },
         {
             id: 2,
-            institution: "Cisco",
+            institution: "Cisco Networking Academy",
             degree: "CCNA Introduction to Networking",
             field: "Network Engineering",
             startDate: "",
             endDate: "",
-            description: "Professional networking certification covering network fundamentals and protocols"
+            description: "Professional certification covering network fundamentals, protocols, and infrastructure"
         },
         {
             id: 3,
@@ -87,200 +146,116 @@ const cvData = {
             field: "Software Engineering",
             startDate: "",
             endDate: "",
-            description: "Official professional certification in software engineering"
+            description: "Official state-recognized professional certification in software engineering"
         },
-        {
-            id: 4,
-            institution: "NATFA 'Krastyo Sarafov'",
-            degree: "Bachelor's Degree",
-            field: "",
-            startDate: "",
-            endDate: "",
-            description: "Bachelor's degree from National Academy for Theatre and Film Arts"
-        },
-        {
-            id: 5,
-            institution: "'Friedrich Schiller' German Language School",
-            degree: "High School Diploma",
-            field: "German Language",
-            startDate: "",
-            endDate: "",
-            description: "Ruse, Bulgaria - German language specialized education"
-        }
     ],
-    
+
     skills: {
-        "Primary Programming Languages": [
-            "TypeScript", "JavaScript"
+        "Languages": [
+            "TypeScript", "JavaScript", "Python", "SQL"
         ],
-        "Secondary Programming Languages": [
-            "Java", "Python"
-        ],
-        "Frontend Technologies": [
-            "React", "Redux", "Redux Saga", "Angular", "RxJS", "NgRx", 
-            "HTML5", "CSS3", "SCSS", "Tailwind", "MUI", "Bootstrap", "Fluent UI"
+        "Frontend": [
+            "React", "React Native", "Expo", "Angular", "Redux", "Redux Saga", "RxJS", "NgRx",
+            "HTML5", "CSS3", "SCSS", "Tailwind", "MUI", "Fluent UI", "Bootstrap"
         ],
         "Backend & APIs": [
-            "Node.js", "Express.js", "RESTful API", "gRPC"
+            "Node.js", "Express.js", "RESTful APIs", "gRPC", "Mongoose"
         ],
-        "Databases": [
-            "MongoDB", "MySQL", "SQL", "Firebase", "Snowflake"
+        "Databases & Data": [
+            "MongoDB", "MySQL", "Firebase", "Supabase", "Snowflake"
         ],
-        "ORM/ODM": [
-            "Mongoose"
+        "DevOps & Tools": [
+            "Git", "Docker", "Azure DevOps", "Cloudflare", "GitLab CI/CD", "Bitbucket", "GitHub Actions"
         ],
-        "Development & DevOps Tools": [
-            "Git", "GitLab", "GitHub", "Bitbucket", "Docker", "Azure DevOps"
+        "Architecture & Patterns": [
+            "Clean Architecture", "Design Patterns", "OOP", "Functional Programming",
+            "Data Structures & Algorithms", "Microservices"
         ],
-        "Project Management & Methodologies": [
-            "Jira", "Agile", "Scrum", "Kanban", "Waterfall"
+        "Testing": [
+            "Jest", "Unit Testing", "Integration Testing", "E2E Testing"
         ],
-        "Software Principles & Practices": [
-            "Design Patterns","Data structures & algorithms", "Clean Architecture", "Clean Code", "OOP", "Functional Programming"
+        "AI-Assisted Development": [
+            "ChatGPT", "Claude", "Claude Code", "Gemini", "Cursor", "GitHub Copilot",
+            "Prompt Engineering", "AI-Powered Code Review", "AI Pair Programming"
         ],
+        "Product & Marketing": [
+            "Figma", "Stripe", "RevenueCat", "Outseta", "Prismic", "Mux"
+        ],
+        "Also Speak (no semicolons needed)": [
+            "Bulgarian \u{1F1E7}\u{1F1EC} Native", "English \u{1F1EC}\u{1F1E7} Fluent", "German \u{1F1E9}\u{1F1EA} Enough to order beer"
+        ]
     },
-    
-    projects: [
+
+    strengths: [
         {
-            id: 1,
-            name: "MAIA (Mubadala AI & Analytics)",
-            role: "Software Engineer",
-            company: "Mubadala",
-            startDate: "2024",
-            endDate: "Present",
-            description: "Proprietary AI-enabled platform designed to transform investment intelligence and corporate workflows. Seamlessly integrating AI into strategic investment processes and everyday operations to accelerate decision-making, enhance precision, and boost operational efficiency. Long-term vision of becoming a voting member on the Investment Committee.",
-            personalExperience: "This is the project I am currently working on, and I consider it the most significant one in my career so far. It is also my first project in which I work as a Senior Developer. We are developing a proprietary AI-enabled platform for the investment industry, using cutting-edge technologies within a large, highly skilled team to deliver a flawless experience for major investors — software with no margin for error. I quickly adapted to the environment and began contributing meaningfully, both technically and organizationally, often supporting my colleagues with technical challenges and administrative coordination. I also had the opportunity to work on-site with clients, ensuring smooth integration and direct feedback on system performance and usability.",
-            technologies: ["TypeScript", "React", "Jotai", ".NET", "Tailwind","Fluent UI", "Azure DevOps"],
-            githubUrl: null,
-            liveUrl: null,
-            image: "mubadala.png"
+            title: "Full-Stack Ownership",
+            description: "Comfortable owning things end-to-end — frontend, backend, architecture, client communication, and delivery.",
+            icon: "fas fa-layer-group"
         },
         {
-            id: 2,
-            name: "Wellness Infotainment System",
-            role: "Software Engineer",
-            company: "IAV GmbH",
-            startDate: "2023",
-            endDate: "2024",
-            description: "In-car infotainment web application for VW ID cars integrating advanced vehicle features including climate control, panoramic roof, ambient lighting, seat massage, and smart lights. Created customized programs for immersive driving experiences.",
-            personalExperience: "This was my second project for Volkswagen web applications, where I had the chance to dive deeply into vehicle functionalities and integrate them through orchestrational design patterns, fully utilizing the car’s physical features. I even had the opportunity to work on-site at the manufacturer, live coding inside the cars to refine and perfect the client experience. Working closely with one colleague, we managed to deliver a highly appreciated and successful project within a short timeframe. Overall, this was one of the most exciting projects I’ve worked on, combining hands-on technical work with direct collaboration in real vehicle environments.",
-            technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "VW Internal Libraries", "Git", "Bitbucket"],
-            githubUrl: null,
-            liveUrl: null,
-            image: "volkswagen.jpg"
+            title: "Strong Communication",
+            description: "Experience representing projects directly to clients, managing expectations, and bridging business needs with technical work.",
+            icon: "fas fa-comments"
         },
         {
-            id: 3,
-            name: "Saint Sofia School Management System",
-            role: "Software Engineer & Project Lead",
-            company: "Saint Sofia Private School",
-            startDate: "2023",
-            endDate: "2023",
-            description: "Full-stack school management application for creating and managing exams, tests, and assignments. Implemented complex data relationships and AI functionality integration for enhanced educational tools.",
-            personalExperience: "This project had originally been developed by our company in the past, but the client returned with requests for new features and overall improvements. Since the original team was no longer available, I took full ownership as both the technical lead and client representative, managing all direct communication with stakeholders. In addition to coordinating the team and distributing tasks, I contributed as a full-stack developer, tackling both frontend and backend challenges. Together, we polished the application into a new version with an improved design and enhanced functionalities. This project challenged me to balance technical excellence with client relationship management, greatly strengthening my leadership and communication skills while delivering innovative educational technology solutions.",
-            technologies: ["JavaScript", "TypeScript", "React", "Redux", "Redux Saga", "Node.js", "Express", "MongoDB", "Mongoose", "MUI", "Docker"],
-            githubUrl: null,
-            liveUrl: null,
-            image: "saintSofia.png"
+            title: "Quick to Adapt",
+            description: "I get productive quickly in new domains. Moved from automotive infotainment to AI investment tools with a smooth transition.",
+            icon: "fas fa-bolt"
         },
         {
-            id: 4,
-            name: "Celonis Bank Application",
-            role: "Software Engineer Consultant",
-            company: "Celonis",
-            startDate: "2023",
-            endDate: "2023",
-            description: "Fintech application refactoring project. Modernized legacy codebase from imperative style to ES6 standards, implementing clean architecture and modern programming practices.",
-            personalExperience: "In this project, I worked independently as a consultant for a team of engineers who had already developed a fintech application, but its codebase had become outdated in terms of modern development patterns and conventions. I single-handedly refactored a crucial part of the application that was facing critical issues at the time and later had the opportunity to mentor the development team on further refactoring and best practices.",
-            technologies: ["JavaScript", "TypeScript", "React", "Redux", "Redux Saga", "MySQL", "Git", "Bitbucket"],
-            githubUrl: null,
-            liveUrl: null,
-            image: "celonis.png"
-        },
-        {
-            id: 5,
-            name: "WeCharge Electric Vehicle System",
-            role: "Software Engineer",
-            company: "IAV GmbH",
-            startDate: "2022",
-            endDate: "2023",
-            description: "Infotainment system for Volkswagen Group electric vehicles providing real-time charging station information, availability status, and pricing. Built-in navigation for efficient journey planning.",
-            personalExperience: "Starting my professional career as a Junior Software Developer, this was the first project I worked on. Unlike my graduate project, this one involved a much larger team. Within the first week, I was already handling tasks independently and delivering results. I quickly adapted to collaborating and aligning with a big team, and soon became one of the most trusted and productive developers on the project. This was also where I started working with Angular, learning to integrate it with internal framework libraries and backend logic, which helped me expand my skill set beyond the frontend experience I had gained at Telerik Academy.",
-            technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "Leaflet", "VW Internal Libraries", "Git", "Bitbucket"],
-            githubUrl: null,
-            liveUrl: null,
-            image: "volkswagen.jpg"
-        },
-        {
-            id: 6,
-            name: "Impulse Communication Platform",
-            role: "Software Engineer",
-            company: "Telerik",
-            startDate: "2022",
-            endDate: "2022",
-            description: "Multi-team collaboration platform with centralized messaging, task organization, and project management. Features include group chats, file sharing, real-time notifications, and authentication protocols.",
-            personalExperience: "This was my graduate project at Telerik Academy. I worked in a team of three, where I took the lead in organizing and guiding the project. It was a challenging experience, as we had to build a chat application with real-time messaging and notifications from scratch. My main contribution was bringing the team together, designing the logical structure of the application, and creating and executing a clear development plan. In the end, our efforts paid off — we won the award for the best graduate project. I graduated as a top performer in my cohort, which led to multiple job offers from different companies.",
-            technologies: ["React", "TypeScript", "Firebase", "MUI", "Git", "GitHub"],
-            githubUrl: null,
-            liveUrl: null,
-            image: "telerik.png"
+            title: "Team Lead & Planner",
+            description: "Experience leading teams, planning sprints, distributing work, and keeping delivery on track — while staying hands-on with the code.",
+            icon: "fas fa-users"
         }
     ],
-    
+
+    sideProjects: [
+        {
+            name: "Project Stream",
+            role: "Founder & Software Architect",
+            status: "In Development",
+            startDate: "March 2026",
+            description: "SaaS platform for streaming vertical series. Mobile-first, built on managed services — Supabase edge functions for backend logic, Mux for video delivery, Cloudflare for infrastructure, and RevenueCat for monetization. My focus is on the frontend and on connecting all these services together. The goal is a real, shippable product.",
+            aiApproach: "This is also where I push my AI-assisted workflow the furthest — using Claude Code with custom agents, skills, and rules to maintain architectural consistency and move faster while still making deliberate decisions about the code.",
+            technologies: ["Expo", "React Native", "Mux", "Supabase", "Cloudflare", "RevenueCat"],
+            icon: "fas fa-play-circle",
+            links: {}
+        },
+        {
+            name: "TollTracker",
+            role: "Marketing & Product Consultant",
+            status: "Released",
+            startDate: "2025",
+            description: "Mobile app available on the App Store and Google Play. In this project I'm not writing code — I consult on UX, create content for articles, plan marketing campaigns, and work on user acquisition. It's a different side of product development, and I find it valuable to be working outside my usual domain.",
+            aiApproach: null,
+            technologies: ["Figma", "Outseta", "RevenueCat", "Stripe", "Prismic"],
+            icon: "fas fa-road",
+            links: {
+                website: "https://trolltracker.eu",
+                appStore: null,
+                playStore: null
+            }
+        }
+    ],
+
     social: {
         linkedin: "https://www.linkedin.com/in/vassil-iliev-41935b239/",
         github: null,
         twitter: null,
-        email: "vassil.iliev.97@gmail.com"
+        email: "vasil.iliev.97@gmail.com"
     },
-    
-    // Additional sections
-    certifications: [
-        {
-            name: "CCNA Introduction to Networking",
-            issuer: "Cisco",
-            date: "",
-            url: null
-        },
-        {
-            name: "Software Engineer Professional Certificate",
-            issuer: "Bulgarian Ministry of Education",
-            date: "",
-            url: null
-        },
-        {
-            name: "Computer Software Engineering",
-            issuer: "Telerik Academy",
-            date: "",
-            url: null
-        }
-    ],
-    
-    languages: [
-        {
-            language: "Bulgarian",
-            level: "Native"
-        },
-        {
-            language: "English",
-            level: "Fluent"
-        },
-        {
-            language: "German",
-            level: "Basic"
-        }
-    ]
+
 };
 
 // Configuration for the CV website
 const config = {
     theme: {
-        default: 'light', // 'light' or 'dark'
+        default: 'dark',
         allowToggle: true
     },
     animations: {
         enabled: true,
-        duration: 600 // milliseconds
+        duration: 600
     },
     contact: {
         showEmail: true,
@@ -288,13 +263,11 @@ const config = {
         showLocation: true
     },
     sections: {
-        about: true,
         experience: true,
-        education: true,
         skills: true,
-        projects: true,
-        certifications: true, // Show certifications section
-        languages: true // Show languages section
+        strengths: true,
+        sideProjects: true,
+        education: true
     }
 };
 
