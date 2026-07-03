@@ -11,7 +11,7 @@ const path = require('path');
 const url = require('url');
 
 const DEFAULT_PORT = 8000;
-const port = process.argv[2] || DEFAULT_PORT;
+const port = process.argv[2] || process.env.PORT || DEFAULT_PORT;
 
 // MIME type mapping
 const mimeTypes = {

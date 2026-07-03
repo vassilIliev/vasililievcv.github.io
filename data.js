@@ -6,7 +6,7 @@ const cvData = {
         email: "vassil.iliev.97@gmail.com",
         phone: "+359894380148",
         location: "Bulgaria",
-        summary: "Full Stack Engineer with 4+ years of experience, mostly in enterprise — currently building an AI investment platform at Mubadala, previously shipped in-car infotainment systems for Volkswagen. I take responsibility naturally, pick up new technologies quickly, and prefer being the person who talks to the client rather than avoiding it.",
+        summary: "Full Stack Engineer with 5+ years of experience, mostly in enterprise — currently building an AI investment platform at Mubadala, previously shipped in-car infotainment systems for Volkswagen. I take responsibility naturally, pick up new technologies quickly, and prefer being the person who talks to the client rather than avoiding it.",
         profileImage: "1.jpg"
     },
 
@@ -25,7 +25,7 @@ const cvData = {
                 "First role as a Senior Developer, in a large team with high standards for code quality and delivery",
                 "Supporting teammates with technical challenges, coordinating across teams, and working on-site with clients"
             ],
-            technologies: ["TypeScript", "React", "Jotai", ".NET", "Tailwind", "Fluent UI", "Azure DevOps"],
+            technologies: ["TypeScript", "React", "Jotai", ".NET", "FastAPI", "Azure Service Bus", "Tailwind", "Fluent UI", "Azure DevOps"],
             details: "The most significant project of my career so far. We're building software for institutional investors in a large, skilled team — a product where there's no room for mistakes. I adapted quickly and started contributing both technically and organizationally. I also had the chance to work on-site with clients, which helped me better understand their actual needs."
         },
         {
@@ -159,20 +159,20 @@ const cvData = {
             "HTML5", "CSS3", "SCSS", "Tailwind", "MUI", "Fluent UI", "Bootstrap"
         ],
         "Backend & APIs": [
-            "Node.js", "Express.js", "RESTful APIs", "gRPC", "Mongoose"
+            "Node.js", "Express.js", "FastAPI", "Pydantic", "RESTful APIs", "gRPC", "Azure Service Bus", "Mongoose"
         ],
         "Databases & Data": [
-            "MongoDB", "MySQL", "Firebase", "Supabase", "Snowflake"
+            "MongoDB", "MySQL", "SQLAlchemy", "Alembic", "Firebase", "Supabase", "Snowflake"
         ],
         "DevOps & Tools": [
-            "Git", "Docker", "Azure DevOps", "Cloudflare", "GitLab CI/CD", "Bitbucket", "GitHub Actions"
+            "Git", "Docker", "Azure DevOps", "Feature Flagging (Unleash, Azure)", "Cloudflare", "GitLab CI/CD", "Bitbucket", "GitHub Actions"
         ],
         "Architecture & Patterns": [
             "Clean Architecture", "Design Patterns", "OOP", "Functional Programming",
             "Data Structures & Algorithms"
         ],
         "Testing": [
-            "Jest", "Unit Testing", "Integration Testing"
+            "Jest", "Playwright", "Unit Testing", "Integration Testing"
         ],
         "AI-Assisted Development": [
             "ChatGPT", "Claude", "Claude Code", "Gemini", "Cursor", "GitHub Copilot",
