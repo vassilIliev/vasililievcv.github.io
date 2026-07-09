@@ -2,11 +2,11 @@
 const cvData = {
     personal: {
         name: "Vassil Iliev",
-        title: "Full Stack Software Engineer",
+        title: "Senior Full-Stack Engineer",
         email: "vassil.iliev.97@gmail.com",
         phone: "+359894380148",
         location: "Bulgaria",
-        summary: "Full Stack Engineer with 5+ years of experience, mostly in enterprise — currently building an AI investment platform at Mubadala, previously shipped in-car infotainment systems for Volkswagen. I take responsibility naturally, pick up new technologies quickly, and prefer being the person who talks to the client rather than avoiding it.",
+        summary: "Senior Full-Stack Engineer with 5+ years across enterprise — automotive, fintech, and institutional investment. Currently building an AI investment platform at Mubadala; previously shipped in-car infotainment for Volkswagen. AI-native in how I work, quick to own problems, and comfortable being the engineer who talks to the client.",
         profileImage: "1.jpg"
     },
 
@@ -16,16 +16,41 @@ const cvData = {
             company: "Mubadala",
             position: "Senior Software Engineer",
             type: "full-time",
+            startDate: "2025",
+            endDate: "Present",
+            image: "mubadala.png",
+            imageStyle: "contain-scaled",
+            projectName: "AI-Powered Procurement Platform",
+            highlights: [
+                "Building an AI-powered procurement platform that streamlines sourcing, supplier evaluation, and contract workflows for a global investment group",
+                "Working full-stack — building and maintaining the FastAPI backend alongside the Next.js frontend",
+                "Owning frontend architecture and coordinating across services, keeping humans in control of the final decision"
+            ],
+            technologies: {
+                frontend: ["Next.js", "TypeScript", "Jotai", "Tailwind"],
+                backend: ["FastAPI", "Azure Service Bus"]
+            },
+            details: "A newer initiative at Mubadala — bringing AI into procurement. The platform helps teams move faster on sourcing and supplier decisions, with a person kept in the loop for the calls that matter. I work across the stack here, building the FastAPI backend and owning the Next.js frontend architecture."
+        },
+        {
+            id: 7,
+            company: "Mubadala",
+            position: "Senior Software Engineer",
+            type: "full-time",
             startDate: "2024",
             endDate: "Present",
             image: "mubadala.png",
             imageStyle: "contain-scaled",
+            projectName: "MAIA — Investment Intelligence Platform",
             highlights: [
                 "Building MAIA, Mubadala's internal AI platform for investment intelligence and corporate workflows",
                 "First role as a Senior Developer, in a large team with high standards for code quality and delivery",
                 "Supporting teammates with technical challenges, coordinating across teams, and working on-site with clients"
             ],
-            technologies: ["TypeScript", "React", "Jotai", ".NET", "FastAPI", "Azure Service Bus", "Tailwind", "Fluent UI", "Azure DevOps"],
+            technologies: {
+                frontend: ["Next.js", "TypeScript", "Jotai", "Tailwind", "Fluent UI"],
+                backend: [".NET", "Azure Service Bus"]
+            },
             details: "The most significant project of my career so far. We're building software for institutional investors in a large, skilled team — a product where there's no room for mistakes. I adapted quickly and started contributing both technically and organizationally. I also had the chance to work on-site with clients, which helped me better understand their actual needs."
         },
         {
@@ -43,7 +68,10 @@ const cvData = {
                 "Delivered the project on schedule with one colleague, including on-site development at VW factories, coding directly in the vehicles",
                 "Designed coordination patterns to manage multiple physical vehicle systems through a single web interface"
             ],
-            technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "VW Internal Libraries", "Git", "Bitbucket"],
+            technologies: {
+                frontend: ["Angular", "RxJS", "NgRx", "VW Internal Libraries"],
+                backend: ["Node.js", "gRPC"]
+            },
             details: "My second VW project. The main challenge was making a web application control actual car hardware — climate, roof, lights, seats — and have them work together as combined programs. I worked on-site at VW factories, developing directly inside the vehicles. It was just me and one colleague, and we delivered on schedule. One of the most rewarding projects I've been part of."
         },
         {
@@ -61,7 +89,11 @@ const cvData = {
                 "Led full-stack development of a school management system for exams, tests, and assignments",
                 "Managed client communication, distributed tasks across the team, and delivered a new version with improved design and AI features"
             ],
-            technologies: ["TypeScript", "React", "Redux", "Redux Saga", "Node.js", "Express", "MongoDB", "Mongoose", "MUI", "Docker"],
+            technologies: {
+                frontend: ["React", "TypeScript", "Redux", "Redux Saga", "MUI"],
+                backend: ["Node.js", "Express.js", "MongoDB", "Mongoose"],
+                infra: ["Docker"]
+            },
             details: "The client returned for new features, but the original developers had moved on. I took over the full scope — client communication, planning, task distribution, and development on both frontend and backend. We delivered an upgraded version with cleaner design and new functionality. It was my first real experience running a project end-to-end."
         },
         {
@@ -79,7 +111,9 @@ const cvData = {
                 "After resolving the immediate issues, mentored the team on cleaner patterns and how to continue the refactoring themselves",
                 "All changes had to maintain full backward compatibility for existing users"
             ],
-            technologies: ["TypeScript", "React", "Redux", "Redux Saga", "MySQL", "Git", "Bitbucket"],
+            technologies: {
+                frontend: ["React", "TypeScript", "Redux", "Redux Saga"]
+            },
             details: "A fintech application had a critical section causing production issues. I joined as a solo consultant, rewrote that part, and then worked with the team to show them how to approach the rest of the codebase on their own."
         },
         {
@@ -97,7 +131,10 @@ const cvData = {
                 "Started as a junior and was working on tasks independently within the first week on a large team",
                 "Integrated Angular with VW's internal framework libraries and connected to backend services over gRPC"
             ],
-            technologies: ["Angular", "RxJS", "NgRx", "Node.js", "gRPC", "Leaflet", "VW Internal Libraries", "Git", "Bitbucket"],
+            technologies: {
+                frontend: ["Angular", "RxJS", "NgRx", "Leaflet", "VW Internal Libraries"],
+                backend: ["Node.js", "gRPC"]
+            },
             details: "My first professional role as a developer. Large team, large company, and a lot to learn quickly. Within the first week I was already handling tasks independently, and over time I became one of the most relied-on developers on the project. This is where I learned Angular and got comfortable working in enterprise-scale codebases."
         },
         {
@@ -115,7 +152,10 @@ const cvData = {
                 "Led a team of three, defined the application architecture and development plan",
                 "Won the award for best graduate project and graduated as a top performer, receiving multiple job offers"
             ],
-            technologies: ["React", "TypeScript", "Firebase", "MUI", "Git", "GitHub"],
+            technologies: {
+                frontend: ["React", "TypeScript", "MUI"],
+                backend: ["Firebase"]
+            },
             details: "My final project at Telerik Academy. A team of three, building a complete chat application with real-time messaging and notifications from the ground up. I led the architecture and planning. We won the award for best project, and I graduated as a top performer in my cohort, which led to several job opportunities."
         }
     ],
@@ -132,21 +172,12 @@ const cvData = {
         },
         {
             id: 2,
-            institution: "Cisco Networking Academy",
-            degree: "CCNA Introduction to Networking",
-            field: "Network Engineering",
+            institution: "Ministry of Education & Science, Republic of Bulgaria",
+            degree: "State-Certified Software Engineer",
+            field: "Professional Qualification",
             startDate: "",
             endDate: "",
-            description: "Professional certification covering network fundamentals, protocols, and infrastructure"
-        },
-        {
-            id: 3,
-            institution: "Bulgarian Ministry of Education",
-            degree: "Software Engineer Professional Certificate",
-            field: "Software Engineering",
-            startDate: "",
-            endDate: "",
-            description: "Official state-recognized professional certification in software engineering"
+            description: "Nationally recognized professional qualification issued under the state education standard, certifying professional competence as a software engineer."
         },
     ],
 
@@ -155,17 +186,17 @@ const cvData = {
             "TypeScript", "JavaScript", "Python"
         ],
         "Frontend": [
-            "React", "Expo", "Angular", "Redux", "Redux Saga", "RxJS", "NgRx", "Jotai",
-            "HTML5", "CSS3", "SCSS", "Tailwind", "MUI", "Fluent UI", "Bootstrap"
+            "React", "Next.js", "Expo", "React Native", "Angular", "Redux", "Redux Saga",
+            "RxJS", "NgRx", "Jotai", "SCSS", "Tailwind", "MUI", "Fluent UI"
         ],
         "Backend & APIs": [
-            "Node.js", "Express.js", "FastAPI", "Pydantic", "RESTful APIs", "gRPC", "Azure Service Bus", "Mongoose"
+            "Node.js", "Express.js", "FastAPI", "Pydantic", "RESTful APIs", "gRPC", "Azure Service Bus"
         ],
         "Databases & Data": [
-            "MongoDB", "MySQL", "SQLAlchemy", "Alembic", "Firebase", "Supabase", "Snowflake"
+            "PostgreSQL", "MongoDB", "MySQL", "SQLAlchemy", "Alembic", "Firebase", "Supabase"
         ],
         "DevOps & Tools": [
-            "Git", "Docker", "Azure DevOps", "Feature Flagging (Unleash, Azure)", "Cloudflare", "GitLab CI/CD", "Bitbucket", "GitHub Actions"
+            "Git", "Docker", "Azure DevOps", "Feature Flagging (Unleash, Azure)", "Cloudflare", "Dokploy", "Bitbucket", "GitHub Actions"
         ],
         "Architecture & Patterns": [
             "Clean Architecture", "Design Patterns", "OOP", "Functional Programming",
@@ -177,9 +208,6 @@ const cvData = {
         "AI-Assisted Development": [
             "ChatGPT", "Claude", "Claude Code", "Gemini", "Cursor", "GitHub Copilot",
             "Prompt Engineering"
-        ],
-        "Product & Marketing": [
-            "Figma", "Stripe", "RevenueCat", "Outseta", "Prismic", "Mux"
         ]
     },
 
@@ -208,13 +236,32 @@ const cvData = {
 
     sideProjects: [
         {
-            name: "Project Stream",
+            name: "SMECRA",
+            role: "Co-Founder",
+            status: "In Development",
+            startDate: "2026",
+            description: "Security and compliance platform helping European SMEs meet the EU Cyber Resilience Act (CRA) — the new regulation that, from December 2027, requires software makers to track and secure every dependency they ship. It ingests Software Bills of Materials (SBOMs), continuously validates them against live vulnerability databases, and generates the compliance evidence market surveillance authorities can request. Together with three friends, I drive it end to end: infrastructure, architecture, product concept, and go-to-market.",
+            aiApproach: null,
+            technologies: {
+                frontend: ["Next.js"],
+                backend: ["FastAPI", "PostgreSQL", "Clerk", "Paddle"],
+                infra: ["Dokploy", "Cloudflare"]
+            },
+            icon: "fas fa-shield-halved",
+            links: {}
+        },
+        {
+            name: "CineDramas",
             role: "Founder & Software Architect",
             status: "In Development",
             startDate: "March 2026",
             description: "SaaS platform for streaming vertical series. Mobile-first, built on managed services — Supabase edge functions for backend logic, Mux for video delivery, Cloudflare for infrastructure, and RevenueCat for monetization. My focus is on the frontend and on connecting all these services together. The goal is a real, shippable product.",
             aiApproach: "This is also where I push my AI-assisted workflow the furthest — using Claude Code with custom agents, skills, and rules to maintain architectural consistency and move faster while still making deliberate decisions about the code.",
-            technologies: ["Expo", "React Native", "Mux", "Supabase", "Cloudflare", "RevenueCat"],
+            technologies: {
+                frontend: ["Expo", "React Native"],
+                backend: ["Supabase", "Mux", "RevenueCat"],
+                infra: ["Cloudflare"]
+            },
             icon: "fas fa-play-circle",
             links: {}
         },

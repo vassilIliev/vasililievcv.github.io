@@ -16,6 +16,17 @@ const COLORS = {
     line: 'CBD5E1',
 };
 
+// technologies may be a flat array or { frontend, backend, infra } — flatten to one list
+function flattenTech(technologies) {
+    if (!technologies) return [];
+    if (Array.isArray(technologies)) return technologies;
+    return [
+        ...(technologies.frontend || []),
+        ...(technologies.backend || []),
+        ...(technologies.infra || []),
+    ];
+}
+
 // ============================================
 // WORD GENERATION
 // ============================================
@@ -192,13 +203,14 @@ function buildExperience() {
             });
         }
 
-        if (exp.technologies && exp.technologies.length) {
+        const expTech = flattenTech(exp.technologies);
+        if (expTech.length) {
             paragraphs.push(new Paragraph({
                 spacing: { before: 40, after: 20 },
                 indent: { left: convertInchesToTwip(0.25) },
                 children: [
                     new TextRun({ text: 'Tech: ', bold: true, size: 18, color: COLORS.muted, font: 'Calibri' }),
-                    new TextRun({ text: exp.technologies.join('  ·  '), size: 18, color: COLORS.secondary, font: 'Calibri' }),
+                    new TextRun({ text: expTech.join('  ·  '), size: 18, color: COLORS.secondary, font: 'Calibri' }),
                 ],
             }));
         }
@@ -254,7 +266,7 @@ function buildSideProjects() {
             indent: { left: convertInchesToTwip(0.25) },
             children: [
                 new TextRun({ text: 'Tech: ', bold: true, size: 18, color: COLORS.muted, font: 'Calibri' }),
-                new TextRun({ text: project.technologies.join('  ·  '), size: 18, color: COLORS.secondary, font: 'Calibri' }),
+                new TextRun({ text: flattenTech(project.technologies).join('  ·  '), size: 18, color: COLORS.secondary, font: 'Calibri' }),
             ],
         }));
 
@@ -489,12 +501,13 @@ function generatePDF() {
                 });
             }
 
-            if (exp.technologies && exp.technologies.length) {
+            const expTechPdf = flattenTech(exp.technologies);
+            if (expTechPdf.length) {
                 doc.moveDown(0.1);
                 doc.font(fontBold).fontSize(8).fillColor(col(COLORS.muted));
                 doc.text('Tech: ', { indent, continued: true, width: pageWidth - indent });
                 doc.font(font).fillColor(col(COLORS.secondary));
-                doc.text(exp.technologies.join('  ·  '));
+                doc.text(expTechPdf.join('  ·  '));
             }
         });
 
@@ -521,7 +534,7 @@ function generatePDF() {
             doc.font(fontBold).fontSize(8).fillColor(col(COLORS.muted));
             doc.text('Tech: ', { indent, continued: true, width: pageWidth - indent });
             doc.font(font).fillColor(col(COLORS.secondary));
-            doc.text(project.technologies.join('  ·  '));
+            doc.text(flattenTech(project.technologies).join('  ·  '));
 
             if (project.links && project.links.website) {
                 doc.font(font).fontSize(8).fillColor(col(COLORS.primary));

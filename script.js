@@ -89,6 +89,23 @@ class CVWebsite {
         }
     }
 
+    renderTechStack(technologies) {
+        if (!technologies) return '';
+        const chip = t => `<span class="tech-tag">${t}</span>`;
+
+        const list = Array.isArray(technologies)
+            ? technologies
+            : [
+                ...(technologies.frontend || []),
+                ...(technologies.backend || []),
+                ...(technologies.infra || [])
+            ];
+
+        if (!list.length) return '';
+
+        return `<div class="tech-stack"><div class="tech-chips">${list.map(chip).join('')}</div></div>`;
+    }
+
     populateExperience() {
         const timeline = document.getElementById('experienceTimeline');
         if (!timeline || !cvData.experience.length || !config.sections.experience) return;
@@ -102,9 +119,7 @@ class CVWebsite {
                 ? `<ul class="experience-highlights">${exp.highlights.map(h => `<li>${h}</li>`).join('')}</ul>`
                 : '';
 
-            const techTags = exp.technologies
-                ? `<div class="experience-tech">${exp.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>`
-                : '';
+            const techTags = this.renderTechStack(exp.technologies);
 
             const detailsSection = exp.details
                 ? `<div class="experience-details" id="details-${exp.id}">
@@ -218,9 +233,7 @@ class CVWebsite {
 
         grid.innerHTML = '<div class="side-projects-grid">' + cvData.sideProjects.map((project, index) => {
             const statusClass = project.status === 'Released' ? 'status--released' : 'status--dev';
-            const techTags = project.technologies
-                ? `<div class="side-project-tech">${project.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>`
-                : '';
+            const techTags = this.renderTechStack(project.technologies);
             const aiNote = project.aiApproach
                 ? `<div class="side-project-ai"><i class="fas fa-robot" aria-hidden="true"></i> ${project.aiApproach}</div>`
                 : '';
