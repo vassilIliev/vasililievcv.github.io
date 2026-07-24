@@ -103,7 +103,7 @@ class CVWebsite {
 
         if (!list.length) return '';
 
-        return `<div class="tech-stack"><div class="tech-chips">${list.map(chip).join('')}</div></div>`;
+        return `<div class="tech-stack"><span class="tech-heading">Main technologies:</span><div class="tech-chips">${list.map(chip).join('')}</div></div>`;
     }
 
     populateExperience() {
